@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="/styles/main.css">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%= pageTitle %>
+    </title>
+    <link rel="stylesheet" href="/main.css">
+</head>
+
+<body>
+    <header class="mainHeader">
+        <nav class="mainHeaderNav">
+            <ul class="mainHeaderItemList">
+                <li class="mainHeaderItem"><a href="/">Shop</a></li>
+                <li class="mainHeaderItem"><a href="/admin/addProduct">Add Product</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <% if (product.length > 0) { %>
+            <div class="grid">
+                <% for (let products of product) { %>
+                    <article>
+                        <header>
+                            <h1>
+                                <%= products.title %>
+                            </h1>
+                            <p>
+                                <%= products.summary %>
+                            </p>
+                        </header>
+                        <div>
+
+                        </div>
+                    </article>
+                    <% } %>
+
+            </div>
+            <% } else {%>
+                <h1>No Product Found</h1>
+                <% } %>
+    </main>
+</body>
+
+</html>
